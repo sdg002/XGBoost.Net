@@ -71,5 +71,10 @@ namespace XGBoostTests
             var h = xgb.Predict(train);
             var hTest = xgb.Predict(test);
         }
+        [TestMethod]
+        public void XOR_WORK_IN_PROGRESS()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

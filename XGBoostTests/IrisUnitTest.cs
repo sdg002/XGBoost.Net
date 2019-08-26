@@ -18,6 +18,7 @@ namespace XGBoostTests
             string filename = "Iris\\Iris.train.data";
             iris.Iris[] records = LoadIris(filename);
             entity.XGVector<iris.Iris>[] vectors = IrisUtils.ConvertFromIrisToFeatureVectors(records);
+            Assert.IsTrue(records.Length >= 140);
         }
         [TestMethod]
         public void TrainAndTestIris()
@@ -54,6 +55,7 @@ namespace XGBoostTests
                 int indexWithMaxValue = Util.GetIndexWithMaxValue(arrResults);
                 string sActualClass = IrisUtils.ConvertLabelFromNumericToString((float)indexWithMaxValue);
                 Trace.WriteLine($"{index}       Expected={sExpected}        Actual={sActualClass}");
+                Assert.AreEqual(sActualClass, sExpected);
             }
             string pathFull = System.IO.Path.Combine(Util.GetProjectDir2(), _fileModelIris);
             xgbc.SaveModelToFile(pathFull);
@@ -85,6 +87,7 @@ namespace XGBoostTests
                 int indexWithMaxValue = Util.GetIndexWithMaxValue(arrResults);
                 string sActualClass = IrisUtils.ConvertLabelFromNumericToString((float)indexWithMaxValue);
                 Trace.WriteLine($"{index}       Expected={sExpected}        Actual={sActualClass}");
+                Assert.AreEqual(sActualClass, sExpected);
             }
         }
         private Iris[] LoadIris(string filename)

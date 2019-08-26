@@ -7,6 +7,28 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XGBoost", "XGBoost\XGBoost.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XGBoostTests", "XGBoostTests\XGBoostTests.csproj", "{39B06908-CE0D-4E06-B2CB-09BE23F776C7}"
 EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Article", "Article\", "{BAC714E3-5B5A-4621-9D5A-709027B96722}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6.1"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_50148"
+		Debug.AspNetCompiler.PhysicalPath = "Article\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_50148\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_50148"
+		Release.AspNetCompiler.PhysicalPath = "Article\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_50148\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "50148"
+		SlnRelativePath = "Article\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +53,14 @@ Global
 		{39B06908-CE0D-4E06-B2CB-09BE23F776C7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{39B06908-CE0D-4E06-B2CB-09BE23F776C7}.Release|x64.ActiveCfg = Release|Any CPU
 		{39B06908-CE0D-4E06-B2CB-09BE23F776C7}.Release|x64.Build.0 = Release|Any CPU
+		{BAC714E3-5B5A-4621-9D5A-709027B96722}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAC714E3-5B5A-4621-9D5A-709027B96722}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAC714E3-5B5A-4621-9D5A-709027B96722}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{BAC714E3-5B5A-4621-9D5A-709027B96722}.Debug|x64.Build.0 = Debug|Any CPU
+		{BAC714E3-5B5A-4621-9D5A-709027B96722}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAC714E3-5B5A-4621-9D5A-709027B96722}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{BAC714E3-5B5A-4621-9D5A-709027B96722}.Release|x64.ActiveCfg = Debug|Any CPU
+		{BAC714E3-5B5A-4621-9D5A-709027B96722}.Release|x64.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
