@@ -124,9 +124,9 @@ License:     Enter the license (<a href="http://www.codeproject.com/info/license
         <li><a href="#">TO BE DONE</a></li>
     </ul>
 <h2 id="intro">Introduction</h2>
-<p>In this article I have demonstrated how to use the C# wrapper of the popular XGBoost unmanaged library. XGBoost stands for "Extreme Gradient Boosting".
-    I  have used the famous IRIS dataset to train and test a model. My objective was to share my learnings of how to embed a machine learning algorithm like extreme gradient boosting
-    in your C# application. <b>Provide link to XGBoost</b>
+<p>In this article I have demonstrated how to use the <a href="https://github.com/PicNet/XGBoost.Net"><strong>C# wrapper of the popular</strong></a> XGBoost unmanaged library. <a href="https://xgboost.readthedocs.io/en/latest/index.html"><strong>XGBoost</strong></a> stands for "Extreme Gradient Boosting".
+    I  have used the famous <strong><a href="#iris">IRIS</a></strong> dataset to train and test a model. My objective was to share my learnings of how to embed a machine learning algorithm like extreme gradient boosting
+    in your C# application. Before I move forward I must extend my gratitude to the developers of the XGBoost unmanaged library and to the developers of .NET wrapper library.
 </p>
 <a href="#toc" title="Table of contents">top</a>
 
@@ -171,17 +171,18 @@ License:     Enter the license (<a href="http://www.codeproject.com/info/license
 </p>
 <a href="#toc" title="Table of contents">top</a>
 
-<h2 id="xgboostlib">XGBoost library (C#) (YOU WERE HERE)</h2>
-<p>TODO</p>
-<a href="#toc" title="Table of contents">top</a>
-
+<h2 id="xgboostlib">XGBoost library (C#)</h2>
 
 <h3 id="xgboostlib_managedwrapper">Managed wrapper</h3>
-<p>TODO</p>
+<p>
+    The C/C++ source code for the original XGBoost library is available on <strong><a href="https://github.com/dmlc/xgboost">Github</a></strong>. You can find build instructions for Windows.
+    Thanks to the efforts of <strong><a href="https://github.com/PicNet/XGBoost.Net">PicNet</a></strong>, we can skip the step of compiling the unmanaged sources and directly jump to the managed wrapper.
+</p>
 <a href="#toc" title="Table of contents">top</a>
 
-<h3 id="xgboostlib_simplelinear">Simple linear classification problem</h3>
-<p>TODO</p>
+<h3 id="xgboostlib_simplelinear">Simple linear classification problem (YOU WERE HERE, write source code in new unit test)</h3>
+<img src="images/LinearClass.svg" />
+<p>We will carry out a simple exercise where we will train a model to class 2 clusters of points which are nicely linearly separable</p>
 <a href="#toc" title="Table of contents">top</a>
 
 <h3 id="xgboostlib_xor">Implementing XOR logic</h3>
