@@ -79,7 +79,22 @@ License:     Enter the license (<a href="http://www.codeproject.com/info/license
         <li><a href="#intro">Introduction</a></li>
         <li><a href="#background">Background</a></li>
         <li><a href="#overview_gradient_boost">Overview of Gradient Boost Classification algorithm</a></li>
-        <li><a href="#xgboostlib">XGBoost library</a></li>
+        <li>
+            <ul>
+                <li>
+                    <a href="#overview_gradient_boost_decisiontree">Intro to decision trees (StatQuest)</a></li>
+                <li>
+                    <a href="#overview_gradient_boost_giniindex">Understanding Gini index while constructing a decision tree</a>
+                </li>
+                <li>
+                    <a href="#overview_gradient_boost_adaboost">Intro to AdaBoost</a>
+                </li>
+                <li>
+                    <a href="#overview_gradient_boost_gradboost">Intro to Gradient Boost</a>
+                </li>
+            </ul>
+        </li>
+        <li><a href="#xgboostlib">XGBoost library(C#)</a></li>
         <li>
             <ul>
                 <li><a href="#xgboostlib_overview">Overview</a></li>
@@ -109,28 +124,57 @@ License:     Enter the license (<a href="http://www.codeproject.com/info/license
         <li><a href="#">TO BE DONE</a></li>
     </ul>
 <h2 id="intro">Introduction</h2>
+<p>In this article I have demonstrated how to use the C# wrapper of the popular XGBoost unmanaged library. XGBoost stands for "Extreme Gradient Boosting".
+    I  have used the famous IRIS dataset to train and test a model. My objective was to share my learnings of how to embed a machine learning algorithm like extreme gradient boosting
+    in your C# application. <b>Provide link to XGBoost</b>
+</p>
 <a href="#toc" title="Table of contents">top</a>
-<p>What the article/code snippet does, why it's useful, the problem it solves etc.&nbsp;&nbsp; TO BE DONE</p>
 
 <h2 id="background">Background</h2>
-<p>TODO</p>
-<p>(Optional) Is there any background to this article that may be useful such 
-as an introduction to the basic ideas presented? </p>
+<p>
+    This article expects the user to be comfortable with an intermediate knowledge of the following:
+</p>
+<ul>
+    <li>Decision tree algorithm</li>
+    <li>Gradient boosting algorithm</li>
+    <li>Data normalization</li>
+    <li>C#</li>
+</ul>
+    
+ <p>
+    This article and the accompanying code refrains from providing an indepth tutorial
+    of decision trees and gradient boosting algorithms.
+</p>
 <a href="#toc" title="Table of contents">top</a>
 
 
 <h2 id="overview_gradient_boost">Overview of Gradient Boost Classification algorithm</h2>
+<h3 id="overview_gradient_boost_decisiontree">Intro to decision trees (StatQuest)</h3>
+<p>
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/7VeUPuFGJHk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
+<a href="#toc" title="Table of contents">top</a>
+<h3 id="overview_gradient_boost_giniindex">Understanding Gini index while constructing a decision tree</h3>
+<p>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/Zze7SKuz9QQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
+<a href="#toc" title="Table of contents">top</a>
+<h3 id="overview_gradient_boost_adaboost">Intro to AdaBoost</h3>
+<p>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/LsK-xG1cLYA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
+<a href="#toc" title="Table of contents">top</a>
+<h3 id="overview_gradient_boost_gradboost">Intro to Gradient Boost</h3>
+<p>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/3CC4N4z3GJc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
+<a href="#toc" title="Table of contents">top</a>
+
+<h2 id="xgboostlib">XGBoost library (C#) (YOU WERE HERE)</h2>
 <p>TODO</p>
 <a href="#toc" title="Table of contents">top</a>
 
-
-<h2 id="xgboostlib">XGBoost library</h2>
-<p>TODO</p>
-<a href="#toc" title="Table of contents">top</a>
-
-<h3 id="xgboostlib_overview">Overview</h3>
-<p>TODO</p>
-<a href="#toc" title="Table of contents">top</a>
 
 <h3 id="xgboostlib_managedwrapper">Managed wrapper</h3>
 <p>TODO</p>
@@ -152,21 +196,27 @@ as an introduction to the basic ideas presented? </p>
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Iris_virginica.jpg/330px-Iris_virginica.jpg" />
     <br />
     <i>Source:Wikipedia</i>
+    <br />
+
+    The data set contains 50 records from each of the three species of the Iris flower. This data set is a test case to 
+    demonstrate many statistical classification techniques. <b>Describe the columns</b>
+
 </p>
+    <ol>
+        <li>Iris-setosa</li>
+        <li>Iris-versicolor</li>
+        <li>Iris-virginica</li>
+    </ol>
+
 <a href="#toc" title="Table of contents">top</a>
 
 <h3 id="iris_datastructure">Data structure</h3>
-<p>TODO</p>
-<pre>
-    5.1,3.5,1.4,0.2,Iris-setosa
-    4.9,3.0,1.4,0.2,Iris-setosa
-    4.7,3.2,1.3,0.2,Iris-setosa
-    6.5,3.0,5.5,1.8,Iris-virginica
-    6.1,3.0,4.9,1.8,Iris-virginica
-    5.9,3.0,5.1,1.8,Iris-virginica
-    5.2,2.7,3.9,1.4,Iris-versicolor
-    6.4,2.9,4.3,1.3,Iris-versicolor
-</pre>
+<p>
+    <img src="images/Iris_Data_Snapshot.PNG"/>
+    <br />
+    <i>Source: Wikipedia</i>
+
+</p>
 <a href="#toc" title="Table of contents">top</a>
 
 <hr />
