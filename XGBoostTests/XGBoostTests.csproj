@@ -62,6 +62,7 @@
     <Compile Include="MyUnitTest.cs" />
     <Compile Include="SaveLoadAndDumpTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SimpleLinearClassifierTests.cs" />
     <Compile Include="TestUtils.cs" />
     <Compile Include="Util.cs" />
     <Compile Include="XGBClassifierTests.cs" />

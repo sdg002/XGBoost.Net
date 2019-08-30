@@ -24,6 +24,36 @@ namespace XGBoostTests
             Trace.WriteLine($"Project directory:{folderProjectLevel}");
             return folderProjectLevel;
         }
+        static Random _rnd = new Random(DateTime.Now.Second);
+        /// <summary>
+        /// Generates random number of points whose X,Y fall within the specified min,max ranges
+        /// When to use this function? Use this for generating labelled training vectors
+        /// </summary>
+        /// <param name="count">No of points to generate</param>
+        /// <param name="minX">Lower limit of the X value of points</param>
+        /// <param name="maxX">Upper limit of the X value of points</param>
+        /// <param name="minY">Lower limit of the Y value of points</param>
+        /// <param name="maxY">Upper limit of the Y value of points</param>
+        /// <param name="label">The numeric class label for these points</param>
+        /// <returns></returns>
+        internal static XGBArray GenerateRandom2dPoints(int count, double minX, double maxX, double minY, double maxY, double label)
+        {
+            var lstPoints = new List<Tuple<float, float>>();//Item1=X, Item2=Y
+            var lstLabels = new List<float>();
+            for(int i=0;i<count;i++)
+            {
+                float x = (float)(_rnd.NextDouble() * (maxX - minX) + minX);
+                float y = (float)(_rnd.NextDouble() * (maxY - minY) + minY);
+                var tPoint = new Tuple<float, float>(x, y);
+                lstPoints.Add(tPoint);
+            }
+            var rs= new XGBArray
+            {
+                Labels=Enumerable.Repeat<float>((float)label,count).ToArray(),
+                Vectors = lstPoints.Select(t=> new float[] { t.Item1,t.Item2 }).ToArray()
+            };
+            return rs;
+        }
         internal static XGBArray ConvertToXGBArray<T>(XGVector<T>[] vectorsTrain)
         {
             var arr = new XGBArray();
@@ -31,6 +61,22 @@ namespace XGBoostTests
             arr.Vectors = vectorsTrain.Select(v => v.Features).ToArray();
             return arr;
         }
+        /// <summary>
+        /// Combines the lables and vectors from array 1 and array 2
+        /// </summary>
+        /// <param name="arr1">First array of vectors and labels</param>
+        /// <param name="arr2">Second array of vectors and labels</param>
+        /// <returns></returns>
+        internal static XGBArray UnionOfXGBArray(XGBArray arr1, XGBArray arr2)
+        {
+            var arrUnion = new XGBArray
+            {
+                Labels = Enumerable.Concat( arr1.Labels,arr2.Labels).ToArray(),
+                Vectors = Enumerable.Concat( arr1.Vectors,arr2.Vectors).ToArray()
+            };
+            return arrUnion;
+        }
+
         /// <summary>
         /// Returns the index of the item in the specified array which has the highest value
         /// </summary>
