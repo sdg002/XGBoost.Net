@@ -183,6 +183,87 @@ License:     Enter the license (<a href="http://www.codeproject.com/info/license
 <h3 id="xgboostlib_simplelinear">Simple linear classification problem (YOU WERE HERE, write source code in new unit test)</h3>
 <img src="images/LinearClass.svg" />
 <p>We will carry out a simple exercise where we will train a model to class 2 clusters of points which are nicely linearly separable</p>
+<pre>
+        /// &lt;summary&gt;
+        /// Two classes of vectors - Class-Blue and Class-Red
+        /// Class-Blue  - The vectors are centered around the point (+0.5,+0.5) and label value=1
+        /// Class-Red   - The vectors are centered around the point (-0.5,-0.5) and label value=0
+        /// &lt;summary&gt;
+        [TestMethod]
+        public void LinearClassification1()
+        {
+            var xgb = new XGBoost.XGBClassifier();
+            float[][] vectorsTrain = new float[][]
+            {
+                new[] {0.5f,0.5f},
+                new[] {0.6f,0.6f},
+                new[] {0.6f,0.4f},
+                new[] {0.4f,0.6f},
+                new[] {0.4f,0.4f},
+
+                new[] {-0.5f,-0.5f},
+                new[] {-0.6f,-0.6f},
+                new[] {-0.6f,-0.4f},
+                new[] {-0.4f,-0.6f},
+                new[] {-0.4f,-0.4f},
+            };
+            var lablesTrain = new[]
+            {
+                1.0f,
+                1.0f,
+                1.0f,
+                1.0f,
+                1.0f,
+
+                0.0f,
+                0.0f,
+                0.0f,
+                0.0f,
+                0.0f,
+            };
+            ///
+            /// Ensure count of training labels=count of training vectors
+            ///
+            Assert.AreEqual(vectorsTrain.Length, lablesTrain.Length);
+            ///
+            /// Train the model
+            ///
+            xgb.Fit(vectorsTrain, lablesTrain);
+            ///
+            /// Test the model using test vectors
+            ///
+            float[][] vectorsTest = new float[][]
+            {
+                new[] {0.55f,0.55f},
+                new[] {0.55f,0.45f},
+                new[] {0.45f,0.55f},
+                new[] {0.45f,0.45f},
+
+                new[] {-0.55f,-0.55f},
+                new[] {-0.55f,-0.45f},
+                new[] {-0.45f,-0.55f},
+                new[] {-0.45f,-0.45f},
+            };
+            var labelsTestExpected = new[]
+            {
+                1.0f,
+                1.0f,
+                1.0f,
+                1.0f,
+
+                0.0f,
+                0.0f,
+                0.0f,
+                0.0f,
+            };
+            float[] labelsTestPredicted = xgb.Predict(vectorsTest);
+            ///
+            /// Verify that predicted labels match the expected labels
+            ///
+            CollectionAssert.AreEqual(labelsTestPredicted, labelsTestExpected);
+        }
+
+</pre>
 <a href="#toc" title="Table of contents">top</a>
 
 <h3 id="xgboostlib_xor">Implementing XOR logic</h3>

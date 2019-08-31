@@ -21,7 +21,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -36,17 +36,17 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="2400"
-     inkscape:window-height="1271"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
      id="namedview20"
      showgrid="false"
      inkscape:zoom="1"
-     inkscape:cx="226.2222"
+     inkscape:cx="61.7222"
      inkscape:cy="22.666698"
      inkscape:window-x="-9"
      inkscape:window-y="-9"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg18" />
+     inkscape:current-layer="g16" />
   <!-- Created with SVG-edit - http://svg-edit.googlecode.com/ -->
   <g
      id="g16"
@@ -54,32 +54,23 @@
     <title
        id="title2">Layer 1</title>
     <line
-       x1="100.00349"
+       x1="241.91211"
        y1="300.02045"
-       x2="100.99651"
+       x2="242.90514"
        y2="51.090672"
        id="svg_3"
        style="fill:none;stroke:#000000;stroke-width:5.55864477" />
     <line
        x1="101"
-       y1="298"
+       y1="182.976"
        x2="400"
-       y2="297"
+       y2="181.976"
        id="svg_5"
        style="fill:none;stroke:#000000;stroke-width:5" />
-    <line
-       stroke-linejoin="null"
-       stroke-linecap="null"
-       x1="136"
-       y1="251"
-       x2="341"
-       y2="115"
-       id="svg_7"
-       style="fill:none;stroke:#000000;stroke-width:2;stroke-dasharray:none" />
     <circle
        id="svg_4"
        r="12.52996"
-       cy="86.461052"
+       cy="211.57468"
        cx="144"
        stroke-linecap="null"
        stroke-linejoin="null"
@@ -95,7 +86,7 @@
     <circle
        id="svg_8"
        r="12.52996"
-       cy="126.12212"
+       cy="251.23563"
        cx="151.00459"
        stroke-linecap="null"
        stroke-linejoin="null"
@@ -103,7 +94,7 @@
     <circle
        id="svg_9"
        r="12.52996"
-       cy="127.1954"
+       cy="252.3089"
        cx="187.25"
        stroke-linecap="null"
        stroke-linejoin="null"
@@ -111,7 +102,7 @@
     <circle
        id="svg_10"
        r="12.52996"
-       cy="92.927368"
+       cy="218.04097"
        cx="175.25"
        stroke-linecap="null"
        stroke-linejoin="null"
@@ -119,84 +110,69 @@
     <circle
        id="svg_11"
        r="12.52996"
-       cy="204.375"
-       cx="358.72635"
+       cy="93.3871"
+       cx="312.09955"
        stroke-linecap="null"
        stroke-linejoin="null"
        style="fill:#0000ff;stroke:#000000;stroke-width:2;stroke-dasharray:none" />
     <circle
        id="svg_12"
        r="12.52996"
-       cy="240.375"
-       cx="337.31757"
+       cy="129.38722"
+       cx="290.69077"
        stroke-linecap="null"
        stroke-linejoin="null"
        style="fill:#0000ff;stroke:#000000;stroke-width:2;stroke-dasharray:none" />
     <circle
        id="svg_13"
        r="12.52996"
-       cy="244.875"
-       cx="377.32141"
+       cy="133.88722"
+       cx="330.69461"
        stroke-linecap="null"
        stroke-linejoin="null"
        style="fill:#0000ff;stroke:#000000;stroke-width:2;stroke-dasharray:none" />
     <circle
        id="svg_14"
        r="12.52996"
-       cy="208.58908"
-       cx="389.75833"
+       cy="97.601189"
+       cx="343.13153"
        stroke-linecap="null"
        stroke-linejoin="null"
        style="fill:#0000ff;stroke:#000000;stroke-width:2;stroke-dasharray:none" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.56145358;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:1.56145358,3.12290715;stroke-dashoffset:0"
+       d="M 115.91185,89.546196 362.45743,277.76085 h 1.63278"
+       id="path839"
+       inkscape:connector-curvature="0" />
   </g>
   <text
      xml:space="preserve"
      style="font-style:normal;font-weight:normal;font-size:18.66666603px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-     x="24.444443"
-     y="283.77777"
+     x="208.44444"
+     y="173.77777"
      id="text830"><tspan
        sodipodi:role="line"
        id="tspan828"
-       x="24.444443"
-       y="283.77777">0,0</tspan></text>
+       x="208.44444"
+       y="173.77777">0,0</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-weight:normal;font-size:18.66666603px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
      x="19.991104"
-     y="27.458557"
+     y="159.45856"
      id="text830-9"><tspan
        sodipodi:role="line"
        id="tspan828-2"
        x="19.991104"
-       y="27.458557">0,1</tspan></text>
+       y="159.45856">-1,0</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-weight:normal;font-size:18.66666603px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
      x="361.99109"
-     y="282.12521"
+     y="158.12521"
      id="text830-7"><tspan
        sodipodi:role="line"
        id="tspan828-6"
        x="361.99109"
-       y="282.12521">1,0</tspan></text>
-  <text
-     xml:space="preserve"
-     style="font-style:normal;font-weight:normal;font-size:18.66666603px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-     x="210.30359"
-     y="286.56964"
-     id="text830-7-9"><tspan
-       sodipodi:role="line"
-       id="tspan828-6-2"
-       x="210.30359"
-       y="286.56964">0.5</tspan></text>
-  <text
-     xml:space="preserve"
-     style="font-style:normal;font-weight:normal;font-size:18.66666603px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-     x="20.769531"
-     y="153.78125"
-     id="text830-7-9-7"><tspan
-       sodipodi:role="line"
-       id="tspan828-6-2-8"
-       x="20.769531"
-       y="153.78125">0.5</tspan></text>
+       y="158.12521">1,0</tspan></text>
 </svg>

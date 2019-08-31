@@ -7,6 +7,85 @@ namespace XGBoostTests
     [TestClass]
     public class SimpleLinearClassifierTests
     {
+        /// <summary>
+        /// Two classes of vectors - Class0 and Class1
+        /// 
+        /// Class0 - The vectors are centered around the point (+0.5,+0.5)
+        /// Class1 - The vectors are centered around the point (-0.5,-0.5)
+        /// </summary>
+        [TestMethod]
+        public void LinearClassification1()
+        {
+            var xgb = new XGBoost.XGBClassifier();
+            float[][] vectorsTrain = new float[][]
+            {
+                new[] {0.5f,0.5f},
+                new[] {0.6f,0.6f},
+                new[] {0.6f,0.4f},
+                new[] {0.4f,0.6f},
+                new[] {0.4f,0.4f},
+
+                new[] {-0.5f,-0.5f},
+                new[] {-0.6f,-0.6f},
+                new[] {-0.6f,-0.4f},
+                new[] {-0.4f,-0.6f},
+                new[] {-0.4f,-0.4f},
+            };
+            var lablesTrain = new[]
+            {
+                1.0f,
+                1.0f,
+                1.0f,
+                1.0f,
+                1.0f,
+
+                0.0f,
+                0.0f,
+                0.0f,
+                0.0f,
+                0.0f,
+            };
+            ///
+            /// Ensure count of training labels=count of training vectors
+            ///
+            Assert.AreEqual(vectorsTrain.Length, lablesTrain.Length);
+            ///
+            /// Train the model
+            ///
+            xgb.Fit(vectorsTrain, lablesTrain);
+            ///
+            /// Test the model using test vectors
+            ///
+            float[][] vectorsTest = new float[][]
+            {
+                new[] {0.55f,0.55f},
+                new[] {0.55f,0.45f},
+                new[] {0.45f,0.55f},
+                new[] {0.45f,0.45f},
+
+                new[] {-0.55f,-0.55f},
+                new[] {-0.55f,-0.45f},
+                new[] {-0.45f,-0.55f},
+                new[] {-0.45f,-0.45f},
+            };
+            var labelsTestExpected = new[]
+            {
+                1.0f,
+                1.0f,
+                1.0f,
+                1.0f,
+
+                0.0f,
+                0.0f,
+                0.0f,
+                0.0f,
+            };
+            float[] labelsTestPredicted = xgb.Predict(vectorsTest);
+            ///
+            /// Verify that predicted labels match the expected labels
+            ///
+            CollectionAssert.AreEqual(labelsTestPredicted, labelsTestExpected);
+        }
         [TestMethod]
         public void LinearClassification2()
         {
