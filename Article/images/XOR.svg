@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="400"
+   height="300"
+   version="1.1"
+   id="svg18"
+   sodipodi:docname="XOR.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)">
+  <metadata
+     id="metadata24">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs22" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     id="namedview20"
+     showgrid="false"
+     inkscape:zoom="1"
+     inkscape:cx="-102.7778"
+     inkscape:cy="22.666698"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g16" />
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:18.66666603px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+     x="359.08139"
+     y="25.236328"
+     id="text830-7-4"><tspan
+       sodipodi:role="line"
+       id="tspan828-6-3"
+       x="359.08139"
+       y="25.236328">1,1</tspan></text>
+  <!-- Created with SVG-edit - http://svg-edit.googlecode.com/ -->
+  <g
+     id="g16"
+     transform="matrix(0.98655284,0,0,0.99109687,-40.177377,-27.546032)">
+    <title
+       id="title2">Layer 1</title>
+    <line
+       x1="104.05801"
+       y1="300.02045"
+       x2="105.05104"
+       y2="51.090672"
+       id="svg_3"
+       style="fill:none;stroke:#000000;stroke-width:5.55864477" />
+    <line
+       x1="101"
+       y1="298"
+       x2="400"
+       y2="297"
+       id="svg_5"
+       style="fill:none;stroke:#000000;stroke-width:5" />
+    <circle
+       id="svg_4"
+       r="12.52996"
+       cy="231.75427"
+       cx="121.70009"
+       stroke-linecap="null"
+       stroke-linejoin="null"
+       style="fill:#ff0000;stroke:#000000;stroke-width:2;stroke-dasharray:none" />
+    <circle
+       id="svg_8"
+       r="12.52996"
+       cy="271.41534"
+       cx="128.70465"
+       stroke-linecap="null"
+       stroke-linejoin="null"
+       style="fill:#ff0000;stroke:#000000;stroke-width:2;stroke-dasharray:none" />
+    <circle
+       id="svg_9"
+       r="12.52996"
+       cy="272.48862"
+       cx="164.95006"
+       stroke-linecap="null"
+       stroke-linejoin="null"
+       style="fill:#ff0000;stroke:#000000;stroke-width:2;stroke-dasharray:none" />
+    <circle
+       id="svg_10"
+       r="12.52996"
+       cy="238.22057"
+       cx="152.95006"
+       stroke-linecap="null"
+       stroke-linejoin="null"
+       style="fill:#ff0000;stroke:#000000;stroke-width:2;stroke-dasharray:none" />
+    <circle
+       id="svg_11"
+       r="12.52996"
+       cy="75.225395"
+       cx="147.8913"
+       stroke-linecap="null"
+       stroke-linejoin="null"
+       style="fill:#0000ff;stroke:#000000;stroke-width:2;stroke-dasharray:none" />
+    <circle
+       id="svg_12"
+       r="12.52996"
+       cy="111.22553"
+       cx="126.48237"
+       stroke-linecap="null"
+       stroke-linejoin="null"
+       style="fill:#0000ff;stroke:#000000;stroke-width:2;stroke-dasharray:none" />
+    <circle
+       id="svg_13"
+       r="12.52996"
+       cy="115.72553"
+       cx="166.4865"
+       stroke-linecap="null"
+       stroke-linejoin="null"
+       style="fill:#0000ff;stroke:#000000;stroke-width:2;stroke-dasharray:none" />
+    <circle
+       id="svg_14"
+       r="12.52996"
+       cy="79.439484"
+       cx="178.92351"
+       stroke-linecap="null"
+       stroke-linejoin="null"
+       style="fill:#0000ff;stroke:#000000;stroke-width:2;stroke-dasharray:none" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.56145358;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:1.56145358, 3.12290715;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 69.284851,144.03128 145.692619,111.22275 100.85301,76.99191 h 1.63278"
+       id="path839"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.56145358;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:1.56145358, 3.12290715;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 205.7573,35.513265 145.69262,111.222625 100.853,76.99191 h 1.63279"
+       id="path839-2"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccc" />
+    <circle
+       id="svg_11-6"
+       cy="225.48344"
+       cx="377.50653"
+       stroke-linecap="null"
+       stroke-linejoin="null"
+       style="fill:#0000ff;stroke:#000000;stroke-width:2;stroke-dasharray:none"
+       r="12.52996" />
+    <circle
+       id="svg_12-0"
+       cy="261.48358"
+       cx="343.93423"
+       stroke-linecap="null"
+       stroke-linejoin="null"
+       style="fill:#0000ff;stroke:#000000;stroke-width:2;stroke-dasharray:none"
+       r="12.52996" />
+    <circle
+       id="svg_13-0"
+       cy="265.98361"
+       cx="379.88354"
+       stroke-linecap="null"
+       stroke-linejoin="null"
+       style="fill:#0000ff;stroke:#000000;stroke-width:2;stroke-dasharray:none"
+       r="12.52996" />
+    <circle
+       id="svg_14-2"
+       cy="229.69753"
+       cx="341.63916"
+       stroke-linecap="null"
+       stroke-linejoin="null"
+       style="fill:#0000ff;stroke:#000000;stroke-width:2;stroke-dasharray:none"
+       r="12.52996" />
+    <circle
+       id="svg_8-0"
+       cy="91.813286"
+       cx="353.97754"
+       stroke-linecap="null"
+       stroke-linejoin="null"
+       style="fill:#ff0000;stroke:#000000;stroke-width:2;stroke-dasharray:none"
+       r="12.52996" />
+    <circle
+       id="svg_10-2"
+       cy="74.762405"
+       cx="378.22275"
+       stroke-linecap="null"
+       stroke-linejoin="null"
+       style="fill:#ff0000;stroke:#000000;stroke-width:2;stroke-dasharray:none"
+       r="12.52996" />
+    <circle
+       id="svg_10-2-1"
+       cy="102.45824"
+       cx="382.31848"
+       stroke-linecap="null"
+       stroke-linejoin="null"
+       style="fill:#ff0000;stroke:#000000;stroke-width:2;stroke-dasharray:none"
+       r="12.52996" />
+    <line
+       x1="402.09433"
+       y1="299.57004"
+       x2="403.08737"
+       y2="50.640129"
+       id="svg_3-6"
+       style="fill:none;stroke:#000000;stroke-width:5.55864477" />
+    <line
+       x1="104.0874"
+       y1="52.509239"
+       x2="403.08725"
+       y2="51.509262"
+       id="svg_5-4"
+       style="fill:none;stroke:#000000;stroke-width:5" />
+    <circle
+       id="svg_8-0-5"
+       cy="70.170753"
+       cx="326.56894"
+       stroke-linecap="null"
+       stroke-linejoin="null"
+       style="fill:#ff0000;stroke:#000000;stroke-width:2;stroke-dasharray:none"
+       r="12.52996" />
+  </g>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:18.66666603px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+     x="24.444443"
+     y="287.77777"
+     id="text830"><tspan
+       sodipodi:role="line"
+       id="tspan828"
+       x="24.444443"
+       y="287.77777">0,0</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:18.66666603px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+     x="5.9911041"
+     y="159.45856"
+     id="text830-9"><tspan
+       sodipodi:role="line"
+       id="tspan828-2"
+       x="5.9911041"
+       y="159.45856">0,0.5</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:18.66666603px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+     x="361.99109"
+     y="282.12521"
+     id="text830-7"><tspan
+       sodipodi:role="line"
+       id="tspan828-6"
+       x="361.99109"
+       y="282.12521">1,0</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:18.66666603px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+     x="25.08139"
+     y="29.236328"
+     id="text830-7-0"><tspan
+       sodipodi:role="line"
+       id="tspan828-6-8"
+       x="25.08139"
+       y="29.236328">0,1</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:18.66666603px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+     x="191.08139"
+     y="285.23633"
+     id="text830-7-7"><tspan
+       sodipodi:role="line"
+       id="tspan828-6-9"
+       x="191.08139"
+       y="285.23633">0.5,0</tspan></text>
+</svg>

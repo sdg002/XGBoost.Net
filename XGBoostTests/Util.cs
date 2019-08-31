@@ -76,7 +76,25 @@ namespace XGBoostTests
             };
             return arrUnion;
         }
-
+        /// <summary>
+        /// Combines all the lables and vectors into a single struct
+        /// </summary>
+        /// <param name="arrs"></param>
+        /// <returns></returns>
+        internal static XGBArray UnionOfXGBArrays(params XGBArray[] arrs)
+        {
+            var arrUnion = new XGBArray
+            {
+                Labels = new float[] { },
+                Vectors = new float[][] { }
+            };
+            foreach(var arr in arrs)
+            {
+                arrUnion.Vectors= arrUnion.Vectors.Concat(arr.Vectors).ToArray();
+                arrUnion.Labels = arrUnion.Labels.Concat(arr.Labels).ToArray();
+            }
+            return arrUnion;
+        }
         /// <summary>
         /// Returns the index of the item in the specified array which has the highest value
         /// </summary>

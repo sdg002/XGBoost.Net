@@ -267,10 +267,80 @@ License:     Enter the license (<a href="http://www.codeproject.com/info/license
 <a href="#toc" title="Table of contents">top</a>
 
 <h3 id="xgboostlib_xor">Implementing XOR logic</h3>
-<p>TODO</p>
+<p>
+    The XOR logic is more complex than the a linear classification. The data points are not directly linearly separable.
+    <br />
+    <img src="images/XOR.svg" />
+    <br />    
+</p>
+
+    <h4>XOR Truth table</h4>
+    <pre>
+        X | Y | OUTPUT
+        --------------
+        1 | 0 |   1
+        --------------
+        0 | 1 |   1
+        --------------
+        0 | 0 |   0
+        --------------
+        1 | 1 |   0
+        --------------
+        
+    </pre>
+
+    <h4>Sample code</h4>
+    <pre>
+        [TestMethod]
+        public void TestMethod1()
+        {
+            var xgb = new XGBoost.XGBClassifier();
+            ///
+            /// Generate training vectors
+            ///
+            int countTrainingPoints = 50;
+            entity.XGBArray trainClass_0_1 = Util.GenerateRandom2dPoints(countTrainingPoints / 2, 
+                0.0, 0.5,
+                0.5, 1.0, 1.0);//0,1
+            entity.XGBArray trainClass_1_0 = Util.GenerateRandom2dPoints(countTrainingPoints / 2,
+                0.5, 1.0,
+                0.0, 0.5, 1.0);//1,0
+            entity.XGBArray trainClass_0_0 = Util.GenerateRandom2dPoints(countTrainingPoints / 2,
+                0.0, 0.5,
+                0.0, 0.5, 0.0);//0,0
+            entity.XGBArray trainClass_1_1 = Util.GenerateRandom2dPoints(countTrainingPoints / 2,
+                0.5, 1.0,
+                0.5, 1.0, 0.0);//1,1
+            ///
+            /// Train the model
+            ///
+            entity.XGBArray allVectorsTraining = Util.UnionOfXGBArrays(trainClass_0_1,trainClass_1_0,trainClass_0_0,trainClass_1_1);
+            xgb.Fit(allVectorsTraining.Vectors, allVectorsTraining.Labels);
+            ///
+            /// Test the model
+            ///
+            int countTestingPoints = 10;
+            entity.XGBArray testClass_0_1 = Util.GenerateRandom2dPoints(countTestingPoints ,
+                0.1, 0.4,
+                0.6, 0.9, 1.0);//0,1
+            entity.XGBArray testClass_1_0 = Util.GenerateRandom2dPoints(countTestingPoints,
+                0.6, 0.9,
+                0.1, 0.4, 1.0);//1,0
+            entity.XGBArray testClass_0_0 = Util.GenerateRandom2dPoints(countTestingPoints,
+                0.1, 0.4,
+                0.1, 0.4, 0.0);//0,0
+            entity.XGBArray testClass_1_1 = Util.GenerateRandom2dPoints(countTestingPoints,
+                0.6, 0.9,
+                0.6, 0.9, 0.0);//1,1
+            entity.XGBArray allVectorsTest = Util.UnionOfXGBArrays(testClass_0_1, testClass_1_0,testClass_0_0,testClass_1_1);
+            var resultsActual = xgb.Predict(allVectorsTest.Vectors);
+            CollectionAssert.AreEqual(resultsActual, allVectorsTest.Labels);
+
+        }
+    </pre>
 <a href="#toc" title="Table of contents">top</a>
 
-<h2 id="iris">Iris dataset</h2>
+<h2 id="iris">Iris dataset (you were here)</h2>
 <h3 id="iris_overview">Overview</h3>
 <p>
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Kosaciec_szczecinkowaty_Iris_setosa.jpg/330px-Kosaciec_szczecinkowaty_Iris_setosa.jpg"/>

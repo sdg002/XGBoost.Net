@@ -67,6 +67,7 @@
     <Compile Include="Util.cs" />
     <Compile Include="XGBClassifierTests.cs" />
     <Compile Include="XGBRegressorTests.cs" />
+    <Compile Include="XORClassifierTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="python\XGPython.py" />
