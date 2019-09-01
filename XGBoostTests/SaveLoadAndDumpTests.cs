@@ -4,14 +4,17 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using XGBoost;
 
 namespace XGBoostTests {
-  [TestClass] public class SaveLoadAndDumpTests {
+  [TestClass]
+    public class SaveLoadAndDumpTests {
     private const string TEST_FILE = "tmpfile.tmp";
 
     [TestInitialize, TestCleanup] public void Reset() {
       if (File.Exists(TEST_FILE)) File.Delete(TEST_FILE);
     }
 
-    [TestMethod] public void TestClassifierSaveAndLoad() {
+    [TestMethod]
+    public void TestClassifierSaveAndLoad()
+    {
       var dataTrain = TestUtils.GetClassifierDataTrain();
       var labelsTrain = TestUtils.GetClassifierLabelsTrain();
       var dataTest = TestUtils.GetClassifierDataTest();
@@ -27,7 +30,9 @@ namespace XGBoostTests {
       Assert.IsTrue(TestUtils.AreEqual(preds1, preds2));
     }
 
-    [TestMethod] public void TestRegressorSaveAndLoad() {
+    [TestMethod]
+    public void TestRegressorSaveAndLoad()
+    {
       var dataTrain = TestUtils.GetRegressorDataTrain();
       var labelsTrain = TestUtils.GetRegressorLabelsTrain();
       var dataTest = TestUtils.GetRegressorDataTest();
@@ -42,7 +47,9 @@ namespace XGBoostTests {
       Assert.IsTrue(TestUtils.AreEqual(preds1, preds2));
     }    
 
-    [TestMethod] public void TestClassifierSaveAndLoadWithParameters() {
+    [TestMethod]
+    public void TestClassifierSaveAndLoadWithParameters()
+    {
       var dataTrain = TestUtils.GetClassifierDataTrain();
       var labelsTrain = TestUtils.GetClassifierLabelsTrain();
       var dataTest = TestUtils.GetClassifierDataTest();
@@ -58,7 +65,9 @@ namespace XGBoostTests {
       Assert.IsTrue(TestUtils.AreEqual(preds1, preds2));
     }
 
-    [TestMethod] public void TestRegressorSaveAndLoadWithParameters() {
+    [TestMethod]
+    public void TestRegressorSaveAndLoadWithParameters()
+    {
       var dataTrain = TestUtils.GetRegressorDataTrain();
       var labelsTrain = TestUtils.GetRegressorLabelsTrain();
       var dataTest = TestUtils.GetRegressorDataTest();
@@ -73,7 +82,9 @@ namespace XGBoostTests {
       Assert.IsTrue(TestUtils.AreEqual(preds1, preds2));
     }  
 
-    [TestMethod] public void TestClassifierDump() {
+    [TestMethod]
+    public void TestClassifierDump()
+    {
       var dataTrain = TestUtils.GetClassifierDataTrain();
       var labelsTrain = TestUtils.GetClassifierLabelsTrain();
       var dataTest = TestUtils.GetClassifierDataTest();

@@ -101,6 +101,7 @@ License:     Enter the license (<a href="http://www.codeproject.com/info/license
                 <li><a href="#xgboostlib_managedwrapper">Managed wrapper</a></li>
                 <li><a href="#xgboostlib_simplelinear">Simple linear classification problem</a></li>
                 <li><a href="#xgboostlib_xor">Implementing XOR logic</a></li>
+                <li><a href="#xgboostlib_savemodel">Persisting a model to file</a></li>
             </ul>
         </li>
         <li><a href="#iris">Iris dataset (YOU WERE HERE)</a></li>
@@ -339,6 +340,22 @@ License:     Enter the license (<a href="http://www.codeproject.com/info/license
         }
     </pre>
 <a href="#toc" title="Table of contents">top</a>
+    <h3 id="xgboostlib_savemodel">Persisting a model to file</h3>
+    <p>Once a model has been trained and found to produce satisfactory results, you would like to use this model in production.
+        The method <strong>SaveModelToFile</strong> will persist the model to a binary file. The static method <strong>LoadClassifierFromFile</strong> will rehydrate
+        the saved model.
+    </p>
+    <pre>
+        var xgbTrainer = new XGBoost.XGBClassifier();
+        ///
+        ///Train the model
+        ///
+        xgbTrainer.SaveModelToFile("SimpleLinearClassifier.dat");
+        ///
+        ///Load the persisted model
+        ///
+        var xgbProduction = XGBoost.XGBClassifier.LoadClassifierFromFile(fileModel);
+    </pre>
 
 <h2 id="iris">Iris dataset (you were here)</h2>
 <h3 id="iris_overview">Overview</h3>
