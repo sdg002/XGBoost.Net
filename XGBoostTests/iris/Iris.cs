@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace XGBoostTests.iris
 {
+    ///
+    ///The C# class Iris will be used for capturing a single data row
+    ///
     public class Iris
     {
         public float Col1 { get; set; }

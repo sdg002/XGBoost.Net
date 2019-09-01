@@ -104,6 +104,11 @@ namespace XGBoostTests
             var results = xgb.Predict(test_Class1_Class2.Vectors);
             CollectionAssert.AreEqual(results, test_Class1_Class2.Labels);
         }
+        /// <summary>
+        /// This unit demonstrates 
+        ///     1)Saving a trained model to disk
+        ///     2)Loading the model from disk and carrying out predictions
+        /// </summary>
         [TestMethod]
         public void SaveAndLoadModel()
         {

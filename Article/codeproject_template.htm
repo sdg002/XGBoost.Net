@@ -104,21 +104,22 @@ License:     Enter the license (<a href="http://www.codeproject.com/info/license
                 <li><a href="#xgboostlib_savemodel">Persisting a model to file</a></li>
             </ul>
         </li>
-        <li><a href="#iris">Iris dataset (YOU WERE HERE)</a></li>
+        <li><a href="#iris">Iris dataset</a></li>
         <li>
             <ul>
                 <li><a href="#iris_overview">Overview</a></li>
                 <li><a href="#iris_datastructure">Data structure</a></li>
+                <li><a href="#iris_parsing">Parsing IRIS records from CSV</a></li>
+                <li><a href="#iris_vector">Creating a feature vector from CSV</a></li>
+                <li><a href="#iris_loading_putting_all_together">Loading IRIS-putting it all together</a></li>
+                <li><a href="#iris_train_test">Training and testing IRIS</a></li>
             </ul>
         </li>
         <li><a href="#">Source code</a></li>
         <li>
             <ul>
+                <li><a href="#">Github</a></li>
                 <li><a href="#">Solution structure</a></li>
-                <li><a href="#">Parsing IRIS records</a></li>
-                <li><a href="#">Creating a feature vector</a></li>
-                <li><a href="#">Training and saving a model</a></li>
-                <li><a href="#">Loading a saved model and testing</a></li>
             </ul>
         </li>
         <li><a href="#">TO BE DONE</a></li>
@@ -386,6 +387,152 @@ License:     Enter the license (<a href="http://www.codeproject.com/info/license
     <i>Source: Wikipedia</i>
 
 </p>
+<a href="#toc" title="Table of contents">top</a>
+
+<h3 id="iris_parsing">Parsing IRIS records from CSV</h3>
+<pre>
+    ///
+    ///The C# class Iris will be used for capturing a single data row
+    ///
+    public class Iris
+    {
+        public float Col1 { get; set; }
+        public float Col2 { get; set; }
+        public float Col3 { get; set; }
+        public float Col4 { get; set; }
+        public string Petal { get; set; }
+    }
+    ///
+    ///The function LoadIris will read the specified file line by line and create an instance of the Iris POCO
+    ///The class TextFieldParser from the assembly Microsoft.VisualBasic is being used here
+    ///
+    private Iris[] LoadIris(string filename)
+    {
+        string pathFull = System.IO.Path.Combine(Util.GetProjectDir2(), filename);
+        List&lt;Iris&gt; records = new List&lt;Iris&gt;();
+        using (var parser = new TextFieldParser(pathFull))
+        {
+            parser.TextFieldType = FieldType.Delimited;
+            parser.SetDelimiters(",");
+            while (!parser.EndOfData)
+            {
+                var fields = parser.ReadFields();
+                Iris oRecord = new Iris();
+                oRecord.Col1 = float.Parse(fields[0]);
+                oRecord.Col2 = float.Parse(fields[1]);
+                oRecord.Col3 = float.Parse(fields[2]);
+                oRecord.Col4 = float.Parse(fields[3]);
+                oRecord.Petal = fields[4];
+                records.Add(oRecord);
+            }
+        }
+</pre>
+<a href="#toc" title="Table of contents">top</a>
+<h3 id="iris_vector">Creating a feature vector from CSV</h3>
+<pre>
+        /// &lt;summary&gt;
+        /// Create XGBoost consumable feature vector from Iris POCO classes
+        /// &lt;/summary&gt;
+        internal static XGVector&lt;Iris&gt;[] ConvertFromIrisToFeatureVectors(Iris[] records)
+        {
+            List&lt;XGVector&lt;Iris&gt;&gt; vectors = new List&lt;XGVector&lt;Iris&gt;&gt;();
+            foreach (var rec in records)
+            {
+                XGVector&lt;Iris&gt; newVector = new XGVector&lt;Iris&gt;();
+                newVector.Original = rec;
+                newVector.Features = new float[]
+                {
+                    rec.Col1, rec.Col2,rec.Col3,rec.Col4
+                };
+                newVector.Label = ConvertLabelFromStringToNumeric(rec.Petal);
+                vectors.Add(newVector);
+            }
+            return vectors.ToArray();
+        }
+
+
+        /// &lt;summary&gt;
+        /// Converts the string based name of the petal to a numeric representation
+        /// &lt;/summary&gt;
+        internal static float ConvertLabelFromStringToNumeric(string petal)
+        {
+            if (petal.Contains("setosa"))
+            {
+                return 0;
+            }
+            else if (petal.Contains("versicolor"))
+            {
+                return 1.0f;
+            }
+            else if (petal.Contains("virginica"))
+            {
+                return 2.0f;
+            }
+            else
+            {
+                throw new NotImplementedException();
+            }
+        }
+</pre>
+<a href="#toc" title="Table of contents">top</a>
+
+<h3 id="iris_loading_putting_all_together">Loading IRIS-putting it all together</h3>
+<pre>
+        [TestMethod]
+        public void BasicLoadData()
+        {
+            string filename = "Iris\\Iris.train.data";
+            iris.Iris[] records = IrisUtils.LoadIris(filename);
+            entity.XGVector&lt;iris.Iris&gt;[] vectors = IrisUtils.ConvertFromIrisToFeatureVectors(records);
+            Assert.IsTrue(records.Length &gt;= 140);
+        }
+
+</pre>
+<a href="#toc" title="Table of contents">top</a>
+
+<h3 id="iris_train_test">Training and testing IRIS</h3>
+<pre>
+        [TestMethod]
+        public void TrainAndTestIris()
+        {
+            ///
+            /// Load training vectors
+            ///
+            string filenameTrain = "Iris\\Iris.train.data";
+            iris.Iris[] recordsTrain = IrisUtils.LoadIris(filenameTrain);
+            entity.XGVector&lt;iris.Iris&gt;[] vectorsTrain = IrisUtils.ConvertFromIrisToFeatureVectors(recordsTrain);
+            ///
+            /// Load testingvectors
+            ///
+            string filenameTest = "Iris\\Iris.test.data";
+            iris.Iris[] recordsTest = IrisUtils.LoadIris(filenameTest);
+            entity.XGVector&lt;iris.Iris&gt;[] vectorsTest = IrisUtils.ConvertFromIrisToFeatureVectors(recordsTest);
+
+            int noOfClasses = 3;
+            var xgbc = new XGBoost.XGBClassifier(objective: "multi:softprob", numClass:3);
+            entity.XGBArray arrTrain = Util.ConvertToXGBArray(vectorsTrain);
+            entity.XGBArray arrTest = Util.ConvertToXGBArray(vectorsTest);
+            xgbc.Fit(arrTrain.Vectors, arrTrain.Labels);
+            var outcomeTest=xgbc.Predict(arrTest.Vectors);
+            for(int index=0;index&lt;arrTest.Vectors.Length;index++)
+            {
+                string sExpected = IrisUtils.ConvertLabelFromNumericToString(arrTest.Labels[index]);
+                float[] arrResults = new float[]
+                {
+                    outcomeTest[index*noOfClasses +0],
+                    outcomeTest[index*noOfClasses +1],
+                    outcomeTest[index*noOfClasses +2]
+                };
+                float max = arrResults.Max();
+                int indexWithMaxValue = Util.GetIndexWithMaxValue(arrResults);
+                string sActualClass = IrisUtils.ConvertLabelFromNumericToString((float)indexWithMaxValue);
+                Trace.WriteLine($"{index}       Expected={sExpected}        Actual={sActualClass}");
+                Assert.AreEqual(sActualClass, sExpected);
+            }
+            string pathFull = System.IO.Path.Combine(Util.GetProjectDir2(), _fileModelIris);
+            xgbc.SaveModelToFile(pathFull);
+        }
+</pre>
 <a href="#toc" title="Table of contents">top</a>
 
 <hr />

@@ -16,7 +16,7 @@ namespace XGBoostTests
         public void BasicLoadData()
         {
             string filename = "Iris\\Iris.train.data";
-            iris.Iris[] records = LoadIris(filename);
+            iris.Iris[] records = IrisUtils.LoadIris(filename);
             entity.XGVector<iris.Iris>[] vectors = IrisUtils.ConvertFromIrisToFeatureVectors(records);
             Assert.IsTrue(records.Length >= 140);
         }
@@ -27,13 +27,13 @@ namespace XGBoostTests
             /// Load training vectors
             ///
             string filenameTrain = "Iris\\Iris.train.data";
-            iris.Iris[] recordsTrain = LoadIris(filenameTrain);
+            iris.Iris[] recordsTrain = IrisUtils.LoadIris(filenameTrain);
             entity.XGVector<iris.Iris>[] vectorsTrain = IrisUtils.ConvertFromIrisToFeatureVectors(recordsTrain);
             ///
             /// Load testingvectors
             ///
             string filenameTest = "Iris\\Iris.test.data";
-            iris.Iris[] recordsTest = LoadIris(filenameTest);
+            iris.Iris[] recordsTest = IrisUtils.LoadIris(filenameTest);
             entity.XGVector<iris.Iris>[] vectorsTest = IrisUtils.ConvertFromIrisToFeatureVectors(recordsTest);
 
             int noOfClasses = 3;
@@ -70,7 +70,7 @@ namespace XGBoostTests
             ///
             int noOfClasses = 3;
             string filenameTest = "Iris\\Iris.test.data";
-            iris.Iris[] recordsTest = LoadIris(filenameTest);
+            iris.Iris[] recordsTest = IrisUtils.LoadIris(filenameTest);
             entity.XGVector<iris.Iris>[] vectorsTest = IrisUtils.ConvertFromIrisToFeatureVectors(recordsTest);
             entity.XGBArray arrTest = Util.ConvertToXGBArray(vectorsTest);
             var outcomeTest = xgbc.Predict(arrTest.Vectors);
@@ -89,28 +89,6 @@ namespace XGBoostTests
                 Trace.WriteLine($"{index}       Expected={sExpected}        Actual={sActualClass}");
                 Assert.AreEqual(sActualClass, sExpected);
             }
-        }
-        private Iris[] LoadIris(string filename)
-        {
-            string pathFull = System.IO.Path.Combine(Util.GetProjectDir2(), filename);
-            List<Iris> records = new List<Iris>();
-            using (var parser = new TextFieldParser(pathFull))
-            {
-                parser.TextFieldType = FieldType.Delimited;
-                parser.SetDelimiters(",");
-                while (!parser.EndOfData)
-                {
-                    var fields = parser.ReadFields();
-                    Iris oRecord = new Iris();
-                    oRecord.Col1 = float.Parse(fields[0]);
-                    oRecord.Col2 = float.Parse(fields[1]);
-                    oRecord.Col3 = float.Parse(fields[2]);
-                    oRecord.Col4 = float.Parse(fields[3]);
-                    oRecord.Petal = fields[4];
-                    records.Add(oRecord);
-                }
-            }
-            return records.ToArray();
         }
     }
 }
