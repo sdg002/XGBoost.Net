@@ -57,8 +57,7 @@ License:     Enter the license (<a href="http://www.codeproject.com/info/license
 <!--  Include download and sample image information.                       --> 
 
 <ul class=download>
-<li><a href="Article_demo.zip">Download demo project - XXX Kb </a></li>
-<li><a href="Article_src.zip">Download source - XXX Kb</a></li>
+<li><a href="#using_the_code">Using the code</a></li>
 </ul>
 
 <p><img 
@@ -122,8 +121,6 @@ License:     Enter the license (<a href="http://www.codeproject.com/info/license
                 <li><a href="#using_the_code_soln">Solution structure</a></li>
             </ul>
         </li>
-        <li><a href="#">TO BE DONE</a></li>
-        <li><a href="#">TO BE DONE</a></li>
     </ul>
 <h2 id="intro">Introduction</h2>
 <p>In this article I have demonstrated how to use the <a href="https://github.com/PicNet/XGBoost.Net"><strong>C# wrapper of the popular</strong></a> XGBoost unmanaged library. <a href="https://xgboost.readthedocs.io/en/latest/index.html"><strong>XGBoost</strong></a> stands for "Extreme Gradient Boosting".
@@ -145,7 +142,8 @@ License:     Enter the license (<a href="http://www.codeproject.com/info/license
     
  <p>
     This article and the accompanying code refrains from providing an indepth tutorial
-    of decision trees and gradient boosting algorithms.
+    of decision trees and gradient boosting algorithms. I have provided links to Youtube training 
+     videos which in my opinion are of immense educational importance.
 </p>
 <a href="#toc" title="Table of contents">top</a>
 
@@ -182,9 +180,9 @@ License:     Enter the license (<a href="http://www.codeproject.com/info/license
 </p>
 <a href="#toc" title="Table of contents">top</a>
 
-<h3 id="xgboostlib_simplelinear">Simple linear classification problem (YOU WERE HERE, write source code in new unit test)</h3>
+<h3 id="xgboostlib_simplelinear">Simple linear classification problem</h3>
 <img src="images/LinearClass.svg" />
-<p>We will carry out a simple exercise where we will train a model to class 2 clusters of points which are nicely linearly separable</p>
+<p>We will carry out a simple exercise where we will train a model to classify 2 clusters of points which are nicely linearly separable</p>
 <pre>
         /// &lt;summary&gt;
         /// Two classes of vectors - Class-Blue and Class-Red
@@ -358,7 +356,7 @@ License:     Enter the license (<a href="http://www.codeproject.com/info/license
         var xgbProduction = XGBoost.XGBClassifier.LoadClassifierFromFile(fileModel);
     </pre>
 
-<h2 id="iris">Iris dataset (you were here)</h2>
+<h2 id="iris">Iris dataset</h2>
 <h3 id="iris_overview">Overview</h3>
 <p>
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Kosaciec_szczecinkowaty_Iris_setosa.jpg/330px-Kosaciec_szczecinkowaty_Iris_setosa.jpg"/>
