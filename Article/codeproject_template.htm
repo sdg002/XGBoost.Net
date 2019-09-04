@@ -185,7 +185,7 @@ License:     Enter the license (<a href="http://www.codeproject.com/info/license
 <h3 id="xgboostlib_simplelinear">Simple linear classification problem</h3>
 <img src="images/LinearClass.svg.png" />
 <p>We will carry out a simple exercise where we will train a model to classify 2 clusters of points which are nicely linearly separable</p>
-<pre>
+<pre lang="cs">
         /// &lt;summary&gt;
         /// Two classes of vectors - Class-Blue and Class-Red
         /// Class-Blue  - The vectors are centered around the point (+0.5,+0.5) and label value=1
@@ -277,7 +277,7 @@ License:     Enter the license (<a href="http://www.codeproject.com/info/license
 </p>
 
     <h4>XOR Truth table</h4>
-    <pre>
+    <pre lang="cs">
         X | Y | OUTPUT
         --------------
         1 | 0 |   1
@@ -292,7 +292,7 @@ License:     Enter the license (<a href="http://www.codeproject.com/info/license
     </pre>
 
     <h4>Sample code</h4>
-    <pre>
+    <pre lang="cs">
         [TestMethod]
         public void TestMethod1()
         {
@@ -346,7 +346,7 @@ License:     Enter the license (<a href="http://www.codeproject.com/info/license
         The method <strong>SaveModelToFile</strong> will persist the model to a binary file. The static method <strong>LoadClassifierFromFile</strong> will rehydrate
         the saved model.
     </p>
-    <pre>
+    <pre lang="cs">
         var xgbTrainer = new XGBoost.XGBClassifier();
         ///
         ///Train the model
@@ -390,7 +390,7 @@ License:     Enter the license (<a href="http://www.codeproject.com/info/license
 <a href="#toc" title="Table of contents">top</a>
 
 <h3 id="iris_parsing">Parsing IRIS records from CSV</h3>
-<pre>
+<pre lang="cs">
     ///
     ///The C# class Iris will be used for capturing a single data row
     ///
@@ -429,7 +429,7 @@ License:     Enter the license (<a href="http://www.codeproject.com/info/license
 </pre>
 <a href="#toc" title="Table of contents">top</a>
 <h3 id="iris_vector">Creating a feature vector from CSV</h3>
-<pre>
+<pre lang="cs">
         /// &lt;summary&gt;
         /// Create XGBoost consumable feature vector from Iris POCO classes
         /// &lt;/summary&gt;
@@ -477,7 +477,7 @@ License:     Enter the license (<a href="http://www.codeproject.com/info/license
 <a href="#toc" title="Table of contents">top</a>
 
 <h3 id="iris_loading_putting_all_together">Loading IRIS-putting it all together</h3>
-<pre>
+<pre lang="cs">
         [TestMethod]
         public void BasicLoadData()
         {
@@ -491,7 +491,7 @@ License:     Enter the license (<a href="http://www.codeproject.com/info/license
 <a href="#toc" title="Table of contents">top</a>
 
 <h3 id="iris_train_test">Training and testing IRIS</h3>
-<pre>
+<pre lang="cs">
         [TestMethod]
         public void TrainAndTestIris()
         {
@@ -572,7 +572,6 @@ License:     Enter the license (<a href="http://www.codeproject.com/info/license
         |
     </pre>
     <a href="#toc" title="Table of contents">top</a>
-<hr />
 
 
 
